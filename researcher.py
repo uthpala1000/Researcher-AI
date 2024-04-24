@@ -27,7 +27,7 @@ openai_api_key = os.getenv("openai_api_key")
 brwoserless_api_key = os.getenv("brwoserless_api_key")
 serper_api_key = os.getenv("serper_api_key")
 
-# 1. Tool for search
+# Tool for search
 
 
 def search(query):
@@ -200,34 +200,8 @@ memory = ConversationSummaryBufferMemory(
     memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
 
 
-'''def main():
-   # st.set_page_config(page_title="AI Research Agent", page_icon=":mag:")
-   # st.header("AI Research Agent")
-    query = st.text_input("Enter your research topic:")
 
-    if query:
-        results = agent_executor.stream({"input": query})
-        final_output = ""
-        try:
-            for result in results:
-                # Assuming 'result' is a dictionary with an 'output' key holding the desired final output
-                if 'output' in result:
-                    final_output = result['output']
-        except Exception as e:
-            st.error(f"An error occurred: {str(e)}")
-            return
-        
-        if final_output:
-            st.write(final_output)  # Displaying the final, cleaned-up output
-        else:
-            st.write("No relevant information found.")
-
-
-if __name__ == '__main__':
-    main()'''
-
-
-# API endpoint via FastAPI
+#API endpoint via FastAPI
 app = FastAPI()
 
 
