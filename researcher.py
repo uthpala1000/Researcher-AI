@@ -192,8 +192,6 @@ agent = (
 
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
-#list(agent_executor.stream({"input": "what are the latest news from meta?"}))
-
 
 
 memory = ConversationSummaryBufferMemory(
@@ -209,7 +207,7 @@ class Query(BaseModel):
     query: str
 
 
-@app.post("/research")
+@app.post("/")
 async def research_agent(query: Query):
     try:
         # Execute the agent to process the input query
