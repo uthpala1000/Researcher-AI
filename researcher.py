@@ -209,11 +209,6 @@ class Query(BaseModel):
     query: str
 
 
-app = FastAPI()
-
-class Query(BaseModel):
-    query: str
-
 @app.post("/research")
 async def research_agent(query: Query):
     try:
