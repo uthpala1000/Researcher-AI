@@ -1,9 +1,7 @@
 fastapi
-uvicorn=
+uvicorn
 python-dotenv
 requests
 beautifulsoup4
 pydantic
-
-# Langchain and related dependencies
 langchain
